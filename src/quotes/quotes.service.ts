@@ -1,10 +1,13 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
+import { DatabaseService } from 'src/database/database.service';
 
 @Injectable()
 export class QuotesService {
     
+    constructor(private databaseService: DatabaseService){}
+
     async getQuotesBySaintName(saint:string, count:number){
-        return ['The river that flows in you also flows in me.']
+        return await this.databaseService.getQuotes()
     }
 }
