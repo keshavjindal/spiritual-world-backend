@@ -5,6 +5,6 @@ import { Injectable } from '@nestjs/common';
 export class QuotesService {
     
     async getQuotesBySaintName(saint:string, count:number){
-        return []
+        return ['The river that flows in you also flows in me.']
     }
 }
